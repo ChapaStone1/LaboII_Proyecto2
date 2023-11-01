@@ -1,21 +1,92 @@
 /***********************************************
 
- Autores: Integrante 1 - Integrante 2
+ Autores: Juan Jose Chaparro - Maria Eugenia Losada
 
 ***********************************************/
-
+:root{
+--color-gradienterojo: linear-gradient(to right, white, red);
+--color-verde: pink;
+--color-violeta: blueviolet;
+--color-gris: gray;
+--color-blanco: white;
+--color-negro: black;
+}
 /* Cabecera principal */
 .main-header{
-    background-color: blue;
+    background: var(--color-gradienterojo);
+    z-index: 1;
+    height: 100px;
+}
+/* Título */
+.main-header>h1{
+    position: absolute;
+    left: 50%;
+    top: 25px;
+    transform: translateX(-50%);
+    color: var(--color-rojo);
+    font-family: 'Ubuntu', sans-serif; 
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* Logo */
+.main-header>img{
+    width: 150px;
+    height: 80px;
+    top:10px;
+    left:10px;
+    
+}
+.notifications>span{
+    color: var(--color-rojo); 
+    right: 20px;
+    top: 60px;
+    position: absolute;
+}
+/* Barra de navegación */
+.main-menu {
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    background: var(--color-gradienterojo);
+    width: 100%;
 }
 
-/* Barra de navegación */
-.main-menu{
-    background-color: red;   
+.menu-group {
+    flex: 1;
+    max-width: 200px;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.menu-group a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    margin: 10px 0;
+}
+
+.material-icons {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.menu-text {
+    display: block;
+    font-size: 14px;
+}
+
+
+
 main section{
+    z-index: 3;
     padding: 3px;
-    background-color: green;
+    background-color: var(--color-violeta);
+    
 }
 
 /* Tarjetas */
@@ -30,5 +101,17 @@ main section{
 
 /* Pie de página principal */
 .main-footer{
-    background-color: violet;
+    z-index: 5;
+    background-color: var(--color-gris);
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif; 
+    font-size: 15px;
+}
+.main-footer>h1{
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    
 }
