@@ -11,6 +11,8 @@
 --color-blanco: white;
 --color-negro: black;
 }
+
+
 /* Cabecera Principal */
 .main-header{
     background: var(--color-gradienterojo);
