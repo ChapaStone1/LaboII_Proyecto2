@@ -1,6 +1,6 @@
 /***********************************************
 
- Autores: Juan Jose Chaparro - Maria Eugenia Losada
+ Autores: Juan Jose Chaparro - María Eugenia Losada
 
 ***********************************************/
 :root{
@@ -11,7 +11,7 @@
 --color-blanco: white;
 --color-negro: black;
 }
-/* Cabecera principal */
+/* Cabecera Principal */
 .main-header{
     background: var(--color-gradienterojo);
     z-index: 1;
