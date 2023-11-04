@@ -72,6 +72,10 @@
     margin: 10px 0;
 }
 
+.menu-group h2{
+    text-align: center;
+}
+
 .material-icons {
     font-size: 24px;
     margin-bottom: 5px;
