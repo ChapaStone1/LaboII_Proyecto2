@@ -4,20 +4,22 @@
 
 ***********************************************/
 :root{
---color-gradienterojo: linear-gradient(to right, white, red);
---color-verde: pink;
---color-violeta: blueviolet;
---color-gris: gray;
+--color-verdemusgo: rgb(103, 175, 115);
+--color-rosa: rgb(231, 197, 202);
+--color-marronclaro: rgb(160, 111, 98);
+--color-gris: grey;
 --color-blanco: white;
 --color-negro: black;
 }
-
+/* Importa los estilos de la fuente desde fonts.css */
+@import url('fuentes.css');
 
 /* Cabecera Principal */
 .main-header{
-    background: var(--color-gradienterojo);
+    background: var(--color-blanco);
     z-index: 1;
-    height: 100px;
+    height: 150px;
+    order: 1;
 }
 /* Título */
 .main-header>h1{
@@ -25,57 +27,73 @@
     left: 50%;
     top: 25px;
     transform: translateX(-50%);
-    color: var(--color-rojo);
+    color: var(--color-negro);
     font-family: 'Ubuntu', sans-serif; 
-    font-size: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
 }
 /* Logo pagina*/
 .main-header>img{
-    width: 150px;
-    height: 80px;
-    top:10px;
-    left:10px;
+    width: 180px;
+    height: 100px;
+    filter: hue-rotate(80deg);
+    margin-left: 5px;
+    margin-top: 5px;
     
 }
-
-
 .notifications>span{
-    color: var(--color-rojo); 
-    right: 20px;
-    top: 60px;
+    color: var(--color-negro); 
+    right: 30px;
+    top: 70px;
     position: absolute;
 }
 /* Barra de navegación  */
 .main-menu {
     z-index: 2;
+    order: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 10px;
-    background: var(--color-gradienterojo);
+    top: 110px;
     width: 100%;
+    position: absolute;
 }
 
 .menu-group {
-    flex: 1;
-    max-width: 200px;
-    margin: 10px;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /*columna para que los elementos se apilen verticalmente */    
+    width: 16.5%; /*'16.5%' para que los elementos se apilen horizontalmente */
+    height: 32px;
+    overflow: hidden; /* Para que los elementos se ajusten al tamaño de su contenido */
+    background-color: var(--color-verdemusgo);
+}
+.menu-group:hover {
+    height: 200px;
+    transition: height 0.5s ease-in;
+    background-color: var(--color-negro);
 }
 
-.menu-group a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    margin: 10px 0;
+.menu-group a{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    color: var(--color-blanco);
+    justify-content: center;
+    background-color: var(--color-negro);
 }
 
-.menu-group h2{
+.menu-group>h2{
+    box-sizing: content-box;
     text-align: center;
+    margin-bottom: 5px;
+    color: var(--color-blanco);
+    font-family: 'Ubuntu', sans-serif;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
 }
 
 .material-icons {
@@ -87,35 +105,76 @@
     display: block;
     font-size: 14px;
 }
+.main{
+    order: 2;
+    z-index: 5;    
 
-
-
+}
 main section{
-    z-index: 3;
-    padding: 3px;
-    background-color: var(--color-violeta);
-    
+    background-color: var(--color-rosa); 
+}
+
+.exclusive-offers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los artículos */
+    justify-content: space-around; /* Alineación de los artículos */
+}
+.exclusive-offers>h2{
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif; 
+    font-size: 30px;
+}
+
+.art-offer {
+    width: calc(33.33% - 20px); /* El 33.33% para que haya tres artículos por fila, y se resta el espacio entre ellos */
+    background-color: #f0f0f0; /* Añade un color de fondo para visualizar mejor */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.art-offer>img{
+    width: 300px;
+    height: 250px;
 }
 
 /* Tarjetas */
-.card{
-    background-color: brown;
+.cards{
+    background-color: var(--color-marronclaro);
+
 }
 
+.card{
+    justify-content: space-around;    
+}
 /* Cotización */
 .loading-item{
-    background-color: lightblue;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    content : ' ';
+    border: 2px solid transparent;
+    border-top: 2px solid var(--color-negro);
+    animation: girar 2s infinite;
 }
-
+@keyframes girar {
+    from{
+       transform: rotate(0deg);
+    }   
+    to{
+       transform: rotate(360deg);
+    }   
+}
 /* Pie de página principal */
 .main-footer{
     z-index: 5;
-    background-color: var(--color-gris);
+    background-color: var(--color-verdemusgo);
     display: flex;
     align-items: center;  
     justify-content: center;
     font-family: 'Ubuntu', sans-serif; 
     font-size: 15px;
+    color: var(--color-blanco);
 }
 .main-footer>h1{
     left: 50%;
