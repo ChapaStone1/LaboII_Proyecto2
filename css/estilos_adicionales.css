@@ -17,8 +17,7 @@
 /* Cabecera Principal */
 .main-header{
     background: var(--color-blanco);
-    z-index: 1;
-    height: 150px;
+    height: 160px;
     order: 1;
 }
 /* Título */
@@ -44,14 +43,28 @@
 }
 .notifications>span{
     color: var(--color-negro); 
-    right: 30px;
+    right: 20px;
     top: 70px;
     position: absolute;
 }
+.notifications > :first-child {
+    font-size: 30px;
+}
+/* Animar la campanita */
+.notifications:hover > :first-child {
+    animation: girar 1.5s infinite;
+}
+
+/* Redondeo del 3 de notificaciones */
+.notifications>:last-child{
+    background-color: var(--color-rosa);
+    border-radius: 50%;
+    font-family: 'Ubuntu',sans-serif;
+    font-size: 15px;     
+    right:10px; 
+}
 /* Barra de navegación  */
 .main-menu {
-    z-index: 2;
-    order: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -107,8 +120,7 @@
     font-size: 14px;
 }
 .main{
-    order: 2;
-    z-index: 5;    
+  
 
 }
 main section{
@@ -168,7 +180,6 @@ main section{
 }
 /* Pie de página principal */
 .main-footer{
-    z-index: 5;
     background-color: var(--color-verdemusgo);
     display: flex;
     align-items: center;  
