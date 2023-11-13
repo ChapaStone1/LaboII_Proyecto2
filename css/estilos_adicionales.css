@@ -58,17 +58,18 @@
     top: 110px;
     width: 100%;
     position: absolute;
+    overflow: hidden;
 }
 
 .menu-group {
     display: flex;
     flex-direction: column; /*columna para que los elementos se apilen verticalmente */    
     width: 16.5%; /*'16.5%' para que los elementos se apilen horizontalmente */
-    height: 32px;
-    overflow: hidden; /* Para que los elementos se ajusten al tamaño de su contenido */
+    height: 35px;
+    overflow: hidden; /*Para que los elementos se ajusten al tamaño de su contenido */
     background-color: var(--color-verdemusgo);
 }
-.menu-group:hover {
+.menu-group:hover{
     height: 200px;
     transition: height 0.5s ease-in;
     background-color: var(--color-negro);
