@@ -10,13 +10,14 @@
 --color-gris: grey;
 --color-blanco: white;
 --color-negro: black;
+--color-rojo: red;
 }
 /* Importa los estilos de la fuente desde fonts.css */
 @import url('fuentes.css');
 
 /* Cabecera Principal */
 .main-header{
-    background: var(--color-blanco);
+    background: var(--color-marronclaro);
     height: 160px;
     order: 1;
 }
@@ -24,19 +25,20 @@
 .main-header>h1{
     position: absolute;
     left: 50%;
-    top: 25px;
+    top: 30px;
     transform: translateX(-50%);
-    color: var(--color-negro);
+    color: var(--color-blanco);
     font-family: 'Ubuntu', sans-serif; 
     font-size: 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
+    text-align: center;
 }
 /* Logo pagina*/
 .main-header>img{
     width: 180px;
     height: 100px;
-    filter: hue-rotate(80deg);
+    /* filter: hue-rotate(80deg); */
     margin-left: 5px;
     margin-top: 5px;
     
@@ -52,12 +54,13 @@
 }
 /* Animar la campanita */
 .notifications:hover > :first-child {
-    animation: girar 1.5s infinite;
+    animation: campana 0.2s infinite;
+    cursor: pointer;
 }
 
 /* Redondeo del 3 de notificaciones */
 .notifications>:last-child{
-    background-color: var(--color-rosa);
+    /* background-color: var(--color-rosa); */
     border-radius: 50%;
     font-family: 'Ubuntu',sans-serif;
     font-size: 15px;     
@@ -95,6 +98,7 @@
     color: var(--color-blanco);
     justify-content: center;
     background-color: var(--color-negro);
+    z-index: 10;
 }
 
 .menu-group>h2{
@@ -108,6 +112,7 @@
     text-align: center;
     line-height: 30px;
     font-size: 15px;
+    text-transform: uppercase;
 }
 
 .material-icons {
@@ -125,41 +130,246 @@
 }
 main section{
     background-color: var(--color-rosa); 
+    border-radius: 4px;
 }
 
+/* CAJAS Y OFERTS EXCLUSIVAS*/
 .exclusive-offers {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espacio entre los artículos */
-    justify-content: space-around; /* Alineación de los artículos */
-}
-.exclusive-offers>h2{
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 500px;
+    width: 80%;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif; 
-    font-size: 30px;
-}
+    background-color: var(--color-marronclaro);
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  .exclusive-offers h2 {
+    width: 70%;
+    position: absolute;
+    text-align: center;
+    color: var(--color-blanco);
+    background-color: var(--color-rojo);
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+
+/*TAMAÑO DE IMAGENES DE CAJAS  */
 
 .art-offer {
-    width: calc(33.33% - 20px); /* El 33.33% para que haya tres artículos por fila, y se resta el espacio entre ellos */
-    background-color: #f0f0f0; /* Añade un color de fondo para visualizar mejor */
-    padding: 20px;
-    box-sizing: border-box;
+    margin: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: var(--color-rosa);
+    border-radius: 10px;
+  
+  }
+  
+  .art-offer h3 {
+    font-size: 19px;
     text-align: center;
-}
-.art-offer>img{
-    width: 300px;
-    height: 250px;
-}
+    height: 55px;
+    font-weight: bold;
+    margin-top: 5px;
 
-/* Tarjetas */
-.cards{
-    background-color: var(--color-marronclaro);
+  }
+  
+  .art-offer>header>p::before {
+    content: attr(data-art-old-price);
+    margin: 5px;
+    font-size: 20px;
+    text-decoration: line-through;
+    color: var(--color-rojo);
+  }
+  
+  .art-offer>header>p {
+    margin: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-negro);
+    position:absolute;
+    margin-left: 150px;
+    margin-top: 180px;
+  }
+  
+  .art-offer>img {
+    width: 100%;
+    height: 230px;
+  }
+  
+  .art-details{
+    height: 70px;  
+    /* background-color: var(--color-rosa); */
+  }
+  
+  .art-details>h4 {
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .art-details>p {
+    margin-top: 15px;
+    font-size: xx-small;
+    font-style: italic;
+  }
+  
+  .art-offer>footer>p {
+    margin-top: 0px;
+  }
+  
+  .art-offer button {
+    margin-top: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /*ACTIVIDAD RECIENTE*/
+  .activity {
+    background-color: var(--color-section);
+    width: 398px;
+    height: 220px;
+    border: 3px solid var(--color-body);
+  }
+  
+  table {
+    background-color: var(--color-body);
+    color: black;
+    width: 90%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-left: 5px;
+  }
+  
+  .activity h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  
+  
+  .activity thead th {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .activity tbody tr:hover {
+    background: linear-gradient(90deg, var(--color-body)), var(--color-section);
+    color: var(--color-resaltado);
+    cursor: pointer;
+  }
+  
+  .activity td {
+    border-top: var(--color-section) solid 1px;
+    font-weight: bold
+  }
 
-}
+  
+  /*TARJETAS*/
 
-.card{
-    justify-content: space-around;    
-}
+.cards {
+    display: flex;
+    width: 382px;
+    height: 220px;
+    border: 3px solid var(--color-body);
+  }
+  
+  .cards>h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  
+  .card {
+    margin-left: 60px;
+    background-color: var(--color-cards);
+    color: var(--color-texto-header);
+    transition: transform .5s;
+    filter: drop-shadow(-3px -3px 3px var(--colorHeaderNav));
+  }
+  
+  .card>h3,
+  p {
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+  
+  .card>img {
+    left: 130px;
+    bottom: 3px;
+  }
+  
+  .card:hover {
+    transform: scale(1.2);
+    z-index: 3;
+  }
+
+
+
+
+
+  /* CONTROL DE STOCK */
+
+.stock-control {
+    background-color: var(--color-body);
+    border: 3px solid var(--color-section);
+    position: relative;
+    width: 398px;
+    height: 265px;
+  }
+  
+  .stock-control>h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--colorHeaderNav);
+    margin-bottom: 35px;
+  }
+  
+  .stock-control h3 {
+    font-weight: bold;
+    padding-bottom: 15px;
+  }
+  
+  .stock-alert[data-alert-level="high"]::before {
+    margin-top: 10px;
+    width: 30%;
+    height: 30px;
+    content: attr(data-stock) " unidades";
+    display: block;
+    background-color: var(--color-resaltado);
+    border: 1px solid black;
+    text-align: end;
+  }
+  
+  .stock-alert[data-alert-level="medium"]::before {
+    width: 60%;
+    height: 30px;
+    content: attr(data-stock) " unidades";
+    display: block;
+    background-color: var(--colorHeaderNav);
+    border: 1px solid black;
+    text-align: end;
+  }
+  
+  .stock-alert[data-alert-level="low"]::before {
+    width: 90%;
+    height: 30px;
+    content: attr(data-stock) " unidades";
+    display: block;
+    background-color: var(--color-cards);
+    border: 1px solid black;
+    text-align: end;
+  }
+  
 /* Cotización */
 .loading-item{
     width: 20px;
@@ -178,6 +388,62 @@ main section{
        transform: rotate(360deg);
     }   
 }
+
+
+/* ANIMACION ICONO CAMPANA */
+@keyframes campana {
+    0%{
+      transform: rotate(20deg);
+    }
+   50%{
+      transform: rotate(-20deg);
+    }
+    100%
+    {
+        transform: rotate(20deg);
+    }
+  }
+
+.contact-support {
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    right: 30px;
+    bottom: 20px;
+    width: 190px;
+    height: 50px;
+    background-color: var(--color-verdemusgo);
+    /* border: solid 1px var(--color-blanco);  */
+    color: var(--color-blanco);
+    border-radius: 80px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-family: 'Ubuntu';
+}
+/* Para el triangulo y que la caja parezca un globo */
+.contact-support::before { 
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    transform: translateX(-100%);
+    transform: rotate(-40deg);
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: var(--color-verdemusgo) transparent transparent transparent;
+}
+
+.material-icons-outlined {
+    font-size: 30px;
+}
+.contact-text {
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif; 
+}
+
 /* Pie de página principal */
 .main-footer{
     background-color: var(--color-verdemusgo);
