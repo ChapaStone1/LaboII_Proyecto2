@@ -105,8 +105,8 @@ main{
   width: 16.5%; /*'16.5%' para que los elementos se apilen horizontalmente */
   height: 35px;
   overflow: hidden; /*Para que los elementos se ajusten al tamaño de su contenido */
-  background-color: var(--color-verdemusgo);
-  border-bottom: 4px solid var(--color-rojo);
+  background-color: var(--color-marronclaro);
+  border-bottom: 4px solid var(--color-negro);
 }
 .menu-group:hover{
   height: 200px;
