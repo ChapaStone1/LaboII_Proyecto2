@@ -10,6 +10,7 @@
 --color-blanco: white;
 --color-negro: black;
 --color-rojo: red;
+--color-grisoscuro: rgb(68, 68, 68);
 
 --sombra-negra: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -91,7 +92,7 @@ main{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  top: 102px;
+  top: 98px;
   width: 100%;
   position: absolute;
   overflow: hidden;
@@ -206,13 +207,13 @@ main{
 }
   
 /* Seteo el 1500 que se encuentra en el HTML con el attr data-art-old-price */*/
-.art-offer>header>p::before {
+/* .art-offer>header>p::before {
   content: attr(data-art-old-price);
   margin: 5px;
   font-size: 20px;
   text-decoration: line-through;
   color: var(--color-rojo);
-}
+} */
   
 .art-offer>header>p {
   font-size: 30px;
@@ -299,12 +300,12 @@ main::after {
   background-color: var(--color-blanco);
   width: 22%;
   height: 220px;
-  border: 3px solid var(--color-negro);
-  border-radius: 10px;
   order: 1;
   margin-left: 2%;
   margin-right: 1%;
   margin-bottom: 2%;
+  border-bottom: 4px solid var(--color-verdemusgo);
+  border-radius: 10px;
 }
 
 table {
@@ -347,14 +348,23 @@ table {
   display: flex;
   width: 22%;
   height: 220px;
-  border: 3px solid var(--color-negro);
   border-radius: 10px;
   order: 3;
   margin-left: 1%;
   margin-right: 1%;
   margin-bottom: 2%;
+  border-bottom: 4px solid var(--color-verdemusgo);
+  border-radius: 10px;
+  background-color: var(--color-blanco);
 }
-  
+
+.cards>article:last-of-type {
+  background-color: var(--color-negro);
+}
+.cards>article:first-of-type {
+  background-color: var(--color-grisoscuro);
+  color: var(--color-blanco);
+}
 .cards>h2 {
   text-align: center;
   margin-bottom: 10px;
@@ -368,6 +378,7 @@ table {
   color: var(--color-blanco);
   transition: transform 0.5s;
   filter: drop-shadow(-3px -3px 3px var(--color-negro));
+  border-radius: 5px;
 }
 
 .card>h3,
@@ -391,7 +402,6 @@ p {
 
 .stock-control {
   background-color: var(--color-blanco);
-  border: 3px solid var(--color-negro);
   position: relative;
   width: 24%;
   height: 220px;
@@ -399,6 +409,8 @@ p {
   margin-left: 1%;
   margin-right: 1%;
   margin-bottom: 2%;
+  border-bottom: 4px solid var(--color-verdemusgo);
+  border-radius: 10px;
 }
 
 .stock-control>h2 {
@@ -407,6 +419,7 @@ p {
   text-transform: capitalize;
   color: var(--color-negro);
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .stock-control h3 {
@@ -420,7 +433,7 @@ p {
   height: 30px;
   content: attr(data-stock) " unidades";
   display: block;
-  background-color: var(--color-gris);
+  background-color: var(--color-rojo);
   border: 1px solid black;
   text-align: end;
 }
@@ -430,7 +443,7 @@ p {
   height: 30px;
   content: attr(data-stock) " unidades";
   display: block;
-  background-color: var(--color-gris);
+  background-color: var(--color-blanco);
   border: 1px solid black;
   text-align: end;
 }
@@ -440,7 +453,7 @@ p {
   height: 30px;
   content: attr(data-stock) " unidades";
   display: block;
-  background-color: var(--color-rojo);
+  background-color: var(--color-verdemusgo);
   border: 1px solid black;
   text-align: end;
 }
