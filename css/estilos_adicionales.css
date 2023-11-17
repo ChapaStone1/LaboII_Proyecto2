@@ -3,6 +3,7 @@
  Autores: Juan Jose Chaparro - María Eugenia Losada
 
 ***********************************************/
+
 /* Defino variables de los colores y una para las sombras */
 :root{
 --color-verdemusgo: rgb(72, 129, 82);
@@ -13,9 +14,10 @@
 --color-rojo: red;
 --color-grisoscuro: rgb(68, 68, 68);
 
+/* la definimos como variable porque al hacer la sombra no pudimos poner la var(--color-negro) */
 --sombra-negra: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-/* IMPORTO LAS FUENTES DE FUENTES.CSS*/
+/* Importamos las fuentes del archivo fuentes.css*/
 @import url('fuentes.css');
 
 /* Definimos la fuente para toda la página */
@@ -66,7 +68,7 @@ body{
     animation: campana 0.4s infinite;
 }
 
-/* Pausar la animación y aumenta un poco tamaño de la campana */
+/* Pausar la animación cuando se pasa con el puntero y aumenta un poco tamaño de la campana */
 .notifications:hover > :first-child {
   font-size: 26px;
   animation: none;
@@ -736,28 +738,28 @@ p {
   }
 
   .stock-control {
-      width: 100%; 
-      margin: 20px auto; 
+    width: 100%; 
+    margin: 20px auto; 
   }
   
   .stock-control>h2 {
-      font-size: 30px; 
-      margin-bottom: 10px; 
+    font-size: 30px; 
+    margin-bottom: 10px; 
   }
   
-  .stock-alert::before {
-      width: 100%;
+.stock-alert::before {
+    width: 100%;
   }
 
   .currency {
-      width: 100%; 
-      margin: 20px auto; 
-      font-size: larger;
+    width: 100%; 
+    margin: 20px auto; 
+    font-size: larger;
   }
   
   .currency>h2 {
-      font-size: 30px;
-      margin-bottom: 10px; 
+    font-size: 30px;
+    margin-bottom: 10px; 
   }
   .loading {
     margin-left: 40%;
@@ -765,16 +767,16 @@ p {
     margin-bottom: 8%;
   }
   .loading-item {
-      margin-right: 5px;
+    margin-right: 5px;
   }
 
   /* Globo de contacto. ajustes de tamaño */
   .contact-support {
-      width: 150px; 
-      height: 40px; 
-      right: 10px;
-      bottom: 30px; 
-      font-size: 14px; 
+    width: 150px; 
+    height: 40px; 
+    right: 10px;
+    bottom: 30px; 
+    font-size: 14px; 
   }
   .material-icons-outlined {
     font-size: 20px;
