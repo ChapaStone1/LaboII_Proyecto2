@@ -726,6 +726,8 @@ p {
         margin: 10px 0; /* Márgenes entre la tabla y otros elementos */
     }
   
+
+    
     .stock-control {
         width: 60%; /* Ancho ajustado para ocupar el espacio disponible */
         margin: 20px auto; /* Márgenes automáticos para centrar */
