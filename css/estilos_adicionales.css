@@ -574,3 +574,165 @@ p {
   text-align: center;
   justify-content: center;
 }
+
+
+@media screen and (max-width: 700px) {
+  
+    /* Estilos para el encabezado */
+    .main-header > h1 {
+        font-size: 24px; /* Tamaño de fuente reducido para pantallas pequeñas */
+        text-align: center; /* Alinear el texto al centro en pantallas pequeñas */
+    }
+  
+    /* Ajustes para el logo */
+    .main-header > img {
+        width: 90px; /* Ancho reducido para pantallas pequeñas */
+        height: 45px; /* Altura reducida para pantallas pequeñas */
+      
+    }
+  
+    /* Estilos para las notificaciones */
+    .notifications > span {
+        font-size: 14px;
+      
+    }
+
+   
+    .main-menu {
+      /* Cambios en el diseño y posicionamiento para pantallas pequeñas */
+      display: block; /* Cambio a bloque para ocupar toda la pantalla verticalmente */
+      position: static; /* Cambio a posición estática */
+      top: auto; /* Remover el posicionamiento superior */
+      width: 100%; /* Ocupar todo el ancho disponible */
+      
+    }
+  
+    .menu-group {
+      width: 100%; /* Ajuste del ancho para ocupar toda la pantalla */
+      
+    }
+  
+    .menu-group:hover {
+      height: auto; 
+      
+    }
+  
+    .menu-group > a {
+      
+      font-size: 14px;
+    }
+  
+    .menu-group > h2 {
+      
+      font-size: 14px; /* Reducción del tamaño del texto */
+      
+    }
+  
+    .exclusive-offers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        margin-top: 20px; 
+        padding: 10px; 
+    }
+    
+    .exclusive-offers article {
+        width: 90%; /* Ajusta el ancho de los artículos */
+        margin: 10px 0; /* Añade un margen entre los artículos */
+        order: 1; /* Ordena los artículos para que se muestren en orden */
+    }
+    
+    .exclusive-offers h2 {
+        width: 90%; /* Ajusta el ancho del título */
+        transform: none; /* Restaura la posición del título a su estado original */
+        margin-top: 20px; /* Añade un margen superior al título */
+        z-index: 1; /* Añade un z-index para que el título se sitúe encima de los botones */
+        order: -1; 
+        position: relative;
+    }
+  
+  
+    /* Ajustes para las tarjetas */
+    .cards {
+        width: 60%; /* Ancho ajustado para ocupar el espacio disponible */
+        flex-direction: column; /* Cambia la dirección de las tarjetas a columna */
+        align-items: center; /* Centra horizontalmente las tarjetas */
+        margin: 20px auto; /* Márgenes automáticos para centrar las tarjetas */
+        
+    }
+    
+    .cards > article {
+       /* width: 90%; /* Ajusta el ancho del artículo */
+        margin: 10px 0; /* Añade margen entre los artículos */
+
+    }
+  
+    .activity {
+        width: 60%; /* Ancho ajustado para ocupar el espacio disponible */
+        margin: 20px auto; /* Márgenes automáticos para centrar la actividad */
+    }
+    
+    table {
+        width: 100%; /* Ancho completo para la tabla */
+        margin: 10px 0; /* Márgenes entre la tabla y otros elementos */
+    }
+  
+    .stock-control {
+        width: 60%; /* Ancho ajustado para ocupar el espacio disponible */
+        margin: 20px auto; /* Márgenes automáticos para centrar */
+    }
+    
+    .stock-control>h2 {
+        font-size: 18px; /* Tamaño de fuente reducido */
+        margin-bottom: 10px; /* Espacio inferior ajustado */
+    }
+    
+    .stock-alert::before {
+        width: 100%; /* Ancho completo para la alerta de stock */
+    }
+  
+    .currency {
+        width: 60%; /* Ancho ajustado para ocupar el espacio disponible */
+        margin: 20px auto; /* Márgenes automáticos para centrar */
+        font-size: larger;
+    }
+    
+    .currency>h2 {
+        font-size: 18px; /* Tamaño de fuente reducido */
+        margin-bottom: 10px; /* Espacio inferior ajustado */
+    }
+    
+      /* Ajustes para las barras simulando flujo de valor */
+    .loading-item {
+        margin-right: 5px; /* Espacio entre los elementos */
+    }
+
+    .main-footer {
+        font-size: 16px;
+        text-align: center; 
+        padding: 10px; 
+        
+    }
+
+    .contact-support {
+        width: 150px; /* Reducir el ancho del elemento */
+        height: 40px; /* Reducir la altura */
+        right: 10px; /* Posicionar más a la derecha */
+        bottom: 10px; /* Posicionar más abajo */
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+        /* Otros ajustes de tamaño, posición, etc. para pantallas pequeñas */
+        /* ... */
+    }
+      
+      /* Ajustes para el ícono */
+    .material-icons-outlined {
+        font-size: 20px;
+    }
+      
+     
+  
+    
+  }
+  
