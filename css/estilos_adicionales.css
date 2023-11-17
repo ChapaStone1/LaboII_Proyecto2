@@ -182,7 +182,8 @@ main{
   align-items: center;
   justify-content: center;
   transform: translate(75%, 0); /* Ubica el elemento en el medio de la pantalla */
-  border-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
 }
 
 
@@ -205,15 +206,15 @@ main{
   font-weight: bold;
   margin-top: 5px;
 }
-  
+ 
 /* Seteo el 1500 que se encuentra en el HTML con el attr data-art-old-price */*/
-/* .art-offer>header>p::before {
+.art-offer>header>p::before {
   content: attr(data-art-old-price);
   margin: 5px;
   font-size: 20px;
   text-decoration: line-through;
   color: var(--color-rojo);
-} */
+} 
   
 .art-offer>header>p {
   font-size: 30px;
@@ -250,7 +251,6 @@ main{
 .art-details>p {
   margin-top: 15px;
   font-size: 12px;
-  font-family: 'Ubuntu', sans-serif;
   font-style: italic;
 }
   
@@ -275,9 +275,11 @@ main{
   color: var(--color-negro);
 }
 
+
+/* PSEUDOELEMENTO PARA AÑADIR BARRA SEPARADORA EN PANTALLA ENTRE ARTICULOS Y LOS DEMAS ELEMENTOS */
 main::after {
   content: "";
-  display: block;
+  /* display: block; */
   width: 95%;
   height: 4px;
   background-color: var(--color-marronclaro);
@@ -286,6 +288,7 @@ main::after {
   translate: (50%,0); /* Ajusta el espacio inferior según tus necesidades */
   transform: translate(2.5%, 0); /* Ubica el elemento en el medio de la pantalla */
   border-radius: 100px;
+  z-index: 1;
 }
 
 /* Añade este bloque para dar espacio entre las secciones */
@@ -480,23 +483,26 @@ p {
   font-size: 20px;
   font-weight: bold;
 }
+
+
 /* BARRAS SIMULANDO FLUJO VALOR */
-/* .loading {
-  width:  px;
-  height: 100px;
-  justify-content: space-around;
-  align-items: flex-end;
-  margin-left: 80px;
-} */
+
+
+.loading {
+  margin-left: 33%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  /* transform: translate(100%, 0); Ubica el elemento en el medio de la pantalla */
+}
 .loading-item{
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   content : ' ';
   border: 2px solid transparent;
   border-top: 2px solid var(--color-negro);
   animation: girar 2s infinite;
-  align-items: center;
+  
 }
 @keyframes girar {
   from{
@@ -527,30 +533,32 @@ p {
   position: fixed;
   flex-direction: row;
   right: 30px;
-  bottom: 20px;
-  width: 190px;
-  height: 50px;
+  bottom: 30px;
+  width: 160px;
+  height: 40px;
   background-color: var(--color-verdemusgo);
   color: var(--color-blanco);
-  border-radius: 80px;
+  border-radius: 8px;
   align-items: center;
   text-align: center;
   justify-content: center;
   box-shadow: var(--sombra-negra);
   cursor: pointer;
-  font-family: 'Ubuntu';
+  z-index: 11;
+  /* Le agregamos el z-index por conflictos con algunos elementos */
 }
-/* Para el triangulo y que la caja parezca un globo */
+/* Pseudoelemento Para el triangulo y que la caja parezca un globo */
 .contact-support::before { 
   content: '';
   position: absolute;
-  top: -4px;
-  right: -4px;
-  transform: translateX(-100%);
-  transform: rotate(-40deg);
-  border-width: 20px 20px 0;
+  top: -6px;
+  right: -16px;
+  transform: translateX(-20%);
+  transform: rotate(-30deg);
+  border-width: 10px 20px 0;
   border-style: solid;
   border-color: var(--color-verdemusgo) transparent transparent transparent;
+  z-index: 11;
 }
 
 .material-icons-outlined {
@@ -558,16 +566,14 @@ p {
 }
 .contact-text {
   font-size: 16px;
-  font-family: 'Ubuntu', sans-serif; 
 }
+
+
 
 /* Pie de página principal */
 .main-footer{
   height: 30px;
   background-color: var(--color-marronclaro);
-  display: flex;
-  /* align-items: center;  */
-  font-family: 'Ubuntu', sans-serif; 
   font-size: 20px;
   color: var(--color-blanco);
   font-weight: bold;
@@ -575,7 +581,7 @@ p {
   justify-content: center;
 }
 
-
+/* Responsible layout */
 @media screen and (max-width: 700px) {
   
     /* Estilos para el encabezado */
@@ -586,8 +592,8 @@ p {
   
     /* Ajustes para el logo */
     .main-header > img {
-        width: 90px; /* Ancho reducido para pantallas pequeñas */
-        height: 45px; /* Altura reducida para pantallas pequeñas */
+        width: 120px; /* Ancho reducido para pantallas pequeñas */
+        height: 70px; /* Altura reducida para pantallas pequeñas */
       
     }
   
@@ -630,30 +636,70 @@ p {
   
     .exclusive-offers {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        height: auto;
+        /* height: auto; */
         margin-top: 20px; 
         padding: 10px; 
     }
     
     .exclusive-offers article {
-        width: 90%; /* Ajusta el ancho de los artículos */
-        margin: 10px 0; /* Añade un margen entre los artículos */
+        width: 40%; /* Ajusta el ancho de los artículos */
+        margin: 25px 20px; /* Añade un margen entre los artículos */
         order: 1; /* Ordena los artículos para que se muestren en orden */
     }
     
     .exclusive-offers h2 {
-        width: 90%; /* Ajusta el ancho del título */
+        width: 80%; /* Ajusta el ancho del título */
         transform: none; /* Restaura la posición del título a su estado original */
-        margin-top: 20px; /* Añade un margen superior al título */
+        margin-top: 5px; /* Añade un margen superior al título */
         z-index: 1; /* Añade un z-index para que el título se sitúe encima de los botones */
-        order: -1; 
         position: relative;
     }
+
+    .art-offer{
+      height: 400px;
+      width: 30%;
+    }
+
+    .art-offer h3 {
+      font-size: 19px;
+      text-align: center;
+      height: 60px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
   
-  
+    .art-details>p {
+      margin-top: 0px;
+      font-size: 12px;
+    }
+      
+    .art-details{
+      height: 50px;  
+      background-color: var(--color-blanco);
+    }
+    .art-offer button {
+      width: 120px;
+      height: 40px;
+      margin-top: 5px;
+      border-radius: 4px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: var(--color-verdemusgo);
+      color: var(--color-blanco);
+    }
+
+    main::after {
+
+      margin-top: 330px; /* Ajusta el espacio superior según tus necesidades */
+      margin-bottom: 25px;
+      z-index: 1;
+    }
+
     /* Ajustes para las tarjetas */
     .cards {
         width: 60%; /* Ancho ajustado para ocupar el espacio disponible */
@@ -672,6 +718,7 @@ p {
     .activity {
         width: 60%; /* Ancho ajustado para ocupar el espacio disponible */
         margin: 20px auto; /* Márgenes automáticos para centrar la actividad */
+        margin-top: 30px;
     }
     
     table {
@@ -703,24 +750,22 @@ p {
         font-size: 18px; /* Tamaño de fuente reducido */
         margin-bottom: 10px; /* Espacio inferior ajustado */
     }
-    
+    .loading {
+      margin-left: 38%;
+      margin-top: 8%;
+      margin-bottom: 8%;
+      /* transform: translate(100%, 0); Ubica el elemento en el medio de la pantalla */
+    }
       /* Ajustes para las barras simulando flujo de valor */
     .loading-item {
         margin-right: 5px; /* Espacio entre los elementos */
-    }
-
-    .main-footer {
-        font-size: 16px;
-        text-align: center; 
-        padding: 10px; 
-        
     }
 
     .contact-support {
         width: 150px; /* Reducir el ancho del elemento */
         height: 40px; /* Reducir la altura */
         right: 10px; /* Posicionar más a la derecha */
-        bottom: 10px; /* Posicionar más abajo */
+        bottom: 30px; /* Posicionar más abajo */
         font-size: 14px; /* Reducir el tamaño de la fuente */
         /* Otros ajustes de tamaño, posición, etc. para pantallas pequeñas */
         /* ... */
@@ -731,8 +776,10 @@ p {
         font-size: 20px;
     }
       
-     
+    .main-footer{
+      font-size: 15px;
+      height: 20px;
+    }     
   
     
   }
-  
